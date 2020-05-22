@@ -4,6 +4,7 @@ go 1.12
 
 require (
 	code.cloudfoundry.org/lager v2.0.0+incompatible
+	github.com/blendle/zapdriver v1.3.1
 	github.com/go-logr/logr v0.1.0
 	github.com/go-test/deep v1.0.2
 	github.com/gogo/protobuf v1.3.1 // indirect
