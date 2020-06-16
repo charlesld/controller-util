@@ -1,6 +1,6 @@
 workspace:
   base: /go
-  path: src/github.com/presslabs/controller-util
+  path: src/github.com/charlesld/controller-util
 
 pipeline:
   dependencies:

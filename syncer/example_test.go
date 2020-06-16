@@ -27,7 +27,7 @@ import (
 	"k8s.io/client-go/tools/record"
 	logf "sigs.k8s.io/controller-runtime/pkg/runtime/log"
 
-	"github.com/presslabs/controller-util/syncer"
+	"github.com/charlesld/controller-util/syncer"
 )
 
 var (

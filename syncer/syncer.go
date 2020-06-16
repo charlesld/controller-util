@@ -25,7 +25,6 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/types"
 	"k8s.io/client-go/tools/record"
-	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 )
 
@@ -63,10 +62,10 @@ func basicEventReason(objKindName string, err error) string {
 // references and recording kubernetes events where appropriate
 func Sync(ctx context.Context, syncer Interface, recorder record.EventRecorder) error {
 	result, err := syncer.Sync(ctx)
-	owner := syncer.GetOwner()
+	owner := syncer.ObjectOwner()
 
 	if recorder != nil && owner != nil && result.EventType != "" && result.EventReason != "" && result.EventMessage != "" {
-		if err != nil || result.Operation != controllerutil.OperationResultNone {
+		if err != nil {
 			recorder.Eventf(owner, result.EventType, result.EventReason, result.EventMessage)
 		}
 	}

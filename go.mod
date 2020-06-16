@@ -1,4 +1,4 @@
-module github.com/presslabs/controller-util
+module github.com/charlesld/controller-util
 
 go 1.12
 
